@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Scan Dent</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">LOGIN</string>
+    <string name="hint_section">Section</string>
+    <string name="saleorder_list"><u>SaleOrder List</u></string>
+    <string name="employee_code"><u>Employee Code</u></string>
+
+
+    <string-array name="DENTCARE_ARRAY">
+        <item>REGISTRATION</item>
+        <item>MODAL</item>
+        <item>METAL FREE</item>
+        <item>METAL</item>
+        <item>CAD CAM</item>
+        <item>IT</item>
+    </string-array>
+</resources>
