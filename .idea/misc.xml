@@ -4,12 +4,17 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/OPT/AndroidStudioProjects/ScanDent/app/src/main/res/drawable-v24/triangle_border.xml" value="0.2777777777777778" />
+        <entry key="..\:/Users/OPT/AndroidStudioProjects/ScanDent/app/src/main/res/drawable-v24/triangle_border_red.xml" value="0.3651041666666667" />
+        <entry key="..\:/Users/OPT/AndroidStudioProjects/ScanDent/app/src/main/res/drawable/ic_baseline_power_settings_new_24.xml" value="0.3651041666666667" />
         <entry key="..\:/Users/OPT/AndroidStudioProjects/ScanDent/app/src/main/res/drawable/ic_lock.xml" value="0.3594871794871795" />
+        <entry key="..\:/Users/OPT/AndroidStudioProjects/ScanDent/app/src/main/res/drawable/ic_logount.xml" value="0.3651041666666667" />
+        <entry key="..\:/Users/OPT/AndroidStudioProjects/ScanDent/app/src/main/res/drawable/ic_logout.xml" value="0.3651041666666667" />
         <entry key="..\:/Users/OPT/AndroidStudioProjects/ScanDent/app/src/main/res/drawable/progress_bg.xml" value="0.2777777777777778" />
         <entry key="..\:/Users/OPT/AndroidStudioProjects/ScanDent/app/src/main/res/drawable/round_bg.xml" value="0.3594871794871795" />
         <entry key="..\:/Users/OPT/AndroidStudioProjects/ScanDent/app/src/main/res/drawable/round_border.xml" value="0.3594871794871795" />
-        <entry key="..\:/Users/OPT/AndroidStudioProjects/ScanDent/app/src/main/res/layout/activity_login.xml" value="0.5" />
-        <entry key="..\:/Users/OPT/AndroidStudioProjects/ScanDent/app/src/main/res/layout/activity_main.xml" value="0.4703703703703704" />
+        <entry key="..\:/Users/OPT/AndroidStudioProjects/ScanDent/app/src/main/res/layout/activity_login.xml" value="0.4509132420091324" />
+        <entry key="..\:/Users/OPT/AndroidStudioProjects/ScanDent/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/OPT/AndroidStudioProjects/ScanDent/app/src/main/res/layout/activity_scan.xml" value="0.21875" />
         <entry key="..\:/Users/OPT/AndroidStudioProjects/ScanDent/app/src/main/res/layout/item_todo.xml" value="0.3489583333333333" />
       </map>
     </option>

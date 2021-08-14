@@ -9,6 +9,7 @@
 
 
     <string-array name="DENTCARE_ARRAY">
+        <item>Select</item>
         <item>REGISTRATION</item>
         <item>MODAL</item>
         <item>METAL FREE</item>
