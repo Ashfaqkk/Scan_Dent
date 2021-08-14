@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -189,7 +190,9 @@ class MainActivity : AppCompatActivity(), BarcodeReader.BarcodeListener,
             list.add("Timestamp: " + event.getTimestamp())
             processBarcodeEntry(event.getBarcodeData())
         }
-
+        runOnUiThread { // update UI to reflect the data
+            processBarcodeEntry(event!!.getBarcodeData())
+        }
     }
 
     override fun onFailureEvent(p0: BarcodeFailureEvent?) {

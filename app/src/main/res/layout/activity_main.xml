@@ -1,231 +1,224 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <LinearLayout
+        android:id="@+id/emp_section"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        tools:ignore="MissingConstraints">
+
 
         <LinearLayout
-            android:id="@+id/emp_section"
+            android:id="@+id/logout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/rvTodoItems"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints">
+            android:layout_marginTop="3dp"
+            android:gravity="right"
+            android:orientation="horizontal">
 
+            <TextView
+                android:id="@+id/logout_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Logout"
+                android:textColor="@color/colorPrimary"
+                android:textSize="19dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_logout" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/triangle_border">
 
             <LinearLayout
-                android:id="@+id/logout"
+                android:id="@+id/test"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
                 android:layout_marginTop="3dp"
-                android:gravity="right"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/logout_text"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/department_main_label"
+                    android:layout_width="125dp"
                     android:layout_height="wrap_content"
-                    android:text="Logout"
+                    android:gravity="right"
+                    android:text="Department : "
                     android:textColor="@color/colorPrimary"
-                    android:textSize="19dp" />
+                    android:textSize="13dp"></TextView>
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/ic_logout" />
+                <TextView
+                    android:id="@+id/department_main"
+                    android:layout_width="266dp"
+                    android:layout_height="wrap_content"
+                    android:text="Model Preparatiion"
+                    android:textColor="@color/darkred"
+                    android:textSize="13dp">
+
+                </TextView>
             </LinearLayout>
 
-            <RelativeLayout
-                android:id="@+id/relativeLayout1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/triangle_border">
-
-                <LinearLayout
-                    android:id="@+id/test"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginTop="3dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/department_main_label"
-                        android:layout_width="125dp"
-                        android:layout_height="wrap_content"
-                        android:gravity="right"
-                        android:text="Department : "
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="13dp"></TextView>
-
-                    <TextView
-                        android:id="@+id/department_main"
-                        android:layout_width="266dp"
-                        android:layout_height="wrap_content"
-                        android:text="Model Preparatiion"
-                        android:textColor="@color/darkred"
-                        android:textSize="13dp">
-
-                    </TextView>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/test2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/test"
-                    android:layout_marginTop="3dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/section_main_label"
-                        android:layout_width="125dp"
-                        android:layout_height="wrap_content"
-                        android:gravity="right"
-                        android:text="Section : "
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="13dp"></TextView>
-
-                    <TextView
-                        android:id="@+id/section_main"
-                        android:layout_width="266dp"
-                        android:layout_height="wrap_content"
-                        android:text="Nova Model"
-                        android:textColor="@color/darkred"
-                        android:textSize="13dp">
-
-                    </TextView>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/test3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/test2"
-                    android:layout_marginTop="3dp"
-                    android:layout_marginBottom="3dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/location_main_label"
-                        android:layout_width="125dp"
-                        android:layout_height="wrap_content"
-                        android:gravity="right"
-                        android:text="Location : "
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="13dp"></TextView>
-
-                    <TextView
-                        android:id="@+id/location_main"
-                        android:layout_width="266dp"
-                        android:layout_height="wrap_content"
-                        android:text="Bite Fixing Nova"
-                        android:textColor="@color/darkred"
-                        android:textSize="13dp"></TextView>
-                </LinearLayout>
-            </RelativeLayout>
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="@string/employee_code"
-                android:textColor="@color/colorPrimary"
-                android:textSize="12dp"
-                tools:layout_editor_absoluteX="218dp"
-                tools:layout_editor_absoluteY="267dp" />
-
-            <TextView
-                android:id="@+id/emp_id"
+            <LinearLayout
+                android:id="@+id/test2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="DP4911"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="17dp"
-                android:textStyle="bold"
-                tools:layout_editor_absoluteX="39dp"
-                tools:layout_editor_absoluteY="18dp" />
+                android:layout_below="@+id/test"
+                android:layout_marginTop="3dp"
+                android:orientation="horizontal">
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="0dp"
-                android:background="@color/colorPrimary" />
+                <TextView
+                    android:id="@+id/section_main_label"
+                    android:layout_width="125dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="Section : "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="13dp"></TextView>
 
-            <TextView
-                android:id="@+id/so_label"
+                <TextView
+                    android:id="@+id/section_main"
+                    android:layout_width="266dp"
+                    android:layout_height="wrap_content"
+                    android:text="Nova Model"
+                    android:textColor="@color/darkred"
+                    android:textSize="13dp">
+
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/test3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:gravity="center"
-                android:text="@string/saleorder_list"
-                android:textColor="@color/colorPrimary"
-                android:textSize="12dp"
-                tools:layout_editor_absoluteX="39dp"
-                tools:layout_editor_absoluteY="18dp" />
-        </LinearLayout>
+                android:layout_below="@+id/test2"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:orientation="horizontal">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvTodoItems"
+                <TextView
+                    android:id="@+id/location_main_label"
+                    android:layout_width="125dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="Location : "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="13dp"></TextView>
+
+                <TextView
+                    android:id="@+id/location_main"
+                    android:layout_width="266dp"
+                    android:layout_height="wrap_content"
+                    android:text="Bite Fixing Nova"
+                    android:textColor="@color/darkred"
+                    android:textSize="13dp"></TextView>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/employee_code"
+            android:textColor="@color/colorPrimary"
+            android:textSize="12dp"
+            tools:layout_editor_absoluteX="218dp"
+            tools:layout_editor_absoluteY="267dp" />
+
+        <TextView
+            android:id="@+id/emp_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@+id/btnAddTodo"
-            app:layout_constraintTop_toBottomOf="@+id/emp_section"
-            app:layout_constraintVertical_bias="0.698"
-            tools:layout_editor_absoluteX="10dp" />
+            android:gravity="center"
+            android:text="DP4911"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="17dp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="39dp"
+            tools:layout_editor_absoluteY="18dp" />
 
-        <LinearLayout
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="0dp"
+            android:background="@color/colorPrimary" />
+
+        <TextView
+            android:id="@+id/so_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="3">
-
-            <EditText
-                android:id="@+id/etTodoTitle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="Enter SaleOrder"
-                android:maxLines="1"
-                android:ellipsize="end"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/btnAddTodo"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <Button
-                android:id="@+id/btnAddTodo"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Add SaleOrder"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/btnDeleteDoneTodos" />
-
-            <Button
-                android:id="@+id/btnDeleteDoneTodos"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Delete done"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-        </LinearLayout>
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="@string/saleorder_list"
+            android:textColor="@color/colorPrimary"
+            android:textSize="12dp"
+            tools:layout_editor_absoluteX="39dp"
+            tools:layout_editor_absoluteY="18dp" />
     </LinearLayout>
-</ScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTodoItems"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ll_bottom"
+        android:layout_below="@+id/emp_section" />
+
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <EditText
+            android:id="@+id/etTodoTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Enter SaleOrder"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnAddTodo"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btnAddTodo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Add SaleOrder"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnDeleteDoneTodos" />
+
+        <Button
+            android:id="@+id/btnDeleteDoneTodos"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Delete done"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </LinearLayout>
+</RelativeLayout>
