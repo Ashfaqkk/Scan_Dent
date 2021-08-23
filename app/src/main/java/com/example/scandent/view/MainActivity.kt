@@ -4,8 +4,10 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.os.Handler
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
-import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -30,7 +32,7 @@ class MainActivity : AppCompatActivity(), BarcodeReader.BarcodeListener,
         )
 
 
-        val sharedIdValue = sharedPreferences.getInt("id_key", 0)
+        /*val sharedIdValue = sharedPreferences.getInt("id_key", 0)
         val sharedNameValue = sharedPreferences.getString("name_key", "defaultname")
         if (sharedIdValue.equals(0) && sharedNameValue.equals("defaultname")) {
             Toast.makeText(
@@ -43,7 +45,7 @@ class MainActivity : AppCompatActivity(), BarcodeReader.BarcodeListener,
             Log.d("TAG", sharedNameValue.toString())
             Log.d("TAG", sharedIdValue.toString())
 
-        }
+        }*/
 
 
         /*val actionBar = supportActionBar
@@ -79,6 +81,26 @@ class MainActivity : AppCompatActivity(), BarcodeReader.BarcodeListener,
         }
 
         activateBarcode()
+        etTodoTitle.requestFocus()
+        etTodoTitle.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                getScannedEntry()
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            }
+        })
+        /*val handler = Handler()
+        val runnable: Runnable = object : Runnable {
+            override fun run() {
+                etTodoTitle.setText(etTodoTitle.text.toString() + " " +System.currentTimeMillis())
+                handler.postDelayed(this, 10)
+            }
+        }
+        runnable.run()*/
     }
 
     override fun onResume() {
@@ -94,12 +116,20 @@ class MainActivity : AppCompatActivity(), BarcodeReader.BarcodeListener,
     private fun activateBarcode() {
 
         AidcManager.create(this) { aidcManager ->
-            manager = aidcManager
-            manager?.let {
-                barcodeReader = it.createBarcodeReader()
+            if (aidcManager != null) {
+                manager = aidcManager
+                registerListener(manager)
+            } else {
+                Toast.makeText(this, "manager is null", Toast.LENGTH_SHORT).show()
             }
 
+        }
+    }
 
+    private fun registerListener(aidcManager: AidcManager?)
+    {
+        barcodeReader = aidcManager!!.createBarcodeReader()
+        if (barcodeReader != null) {
             // register bar code event listener
             barcodeReader?.let {
                 it.addBarcodeListener(this)
@@ -111,7 +141,8 @@ class MainActivity : AppCompatActivity(), BarcodeReader.BarcodeListener,
                         BarcodeReader.TRIGGER_CONTROL_MODE_AUTO_CONTROL
                     )
                 } catch (e: UnsupportedPropertyException) {
-                    Toast.makeText(this, "Failed to apply properties", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Failed to apply properties", Toast.LENGTH_SHORT)
+                        .show()
                 }
                 // register trigger state change listener
                 // register trigger state change listener
@@ -141,13 +172,12 @@ class MainActivity : AppCompatActivity(), BarcodeReader.BarcodeListener,
                 // Enable bad read response
                 properties[BarcodeReader.PROPERTY_NOTIFICATION_BAD_READ_ENABLED] = true
                 // Apply the settings
-                // Apply the settings
                 it.setProperties(properties)
             }
-
+        } else {
+            Toast.makeText(this, "Reader is null", Toast.LENGTH_SHORT).show()
         }
     }
-
     override fun onBackPressed() {
         Log.d("spinner", "Back presseed")
 
@@ -181,26 +211,31 @@ class MainActivity : AppCompatActivity(), BarcodeReader.BarcodeListener,
 
     override fun onBarcodeEvent(event: BarcodeReadEvent?) {
 
-        event?.let {
-            val list: MutableList<String> = ArrayList()
-            list.add("Barcode data: " + event.getBarcodeData())
-            list.add("Character Set: " + event.getCharset())
-            list.add("Code ID: " + event.getCodeId())
-            list.add("AIM ID: " + event.getAimId())
-            list.add("Timestamp: " + event.getTimestamp())
-            processBarcodeEntry(event.getBarcodeData())
-        }
+//        event?.let {
+//            val list: MutableList<String> = ArrayList()
+//            list.add("Barcode data: " + event.getBarcodeData())
+//            list.add("Character Set: " + event.getCharset())
+//            list.add("Code ID: " + event.getCodeId())
+//            list.add("AIM ID: " + event.getAimId())
+//            list.add("Timestamp: " + event.getTimestamp())
+//            processBarcodeEntry(event.getBarcodeData())
+//        }
         runOnUiThread { // update UI to reflect the data
             processBarcodeEntry(event!!.getBarcodeData())
+            Toast.makeText(this, event!!.getBarcodeData(), Toast.LENGTH_SHORT).show()
         }
     }
 
     override fun onFailureEvent(p0: BarcodeFailureEvent?) {
-
+        runOnUiThread { // update UI to reflect the data
+            Toast.makeText(this, "Failure", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun onTriggerEvent(p0: TriggerStateChangeEvent?) {
-
+        runOnUiThread { // update UI to reflect the data
+            Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun onPause() {

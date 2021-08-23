@@ -199,6 +199,10 @@
             android:hint="Enter SaleOrder"
             android:maxLines="1"
             android:ellipsize="end"
+            android:cursorVisible="false"
+            android:background="@android:color/transparent"
+            android:textColor="@android:color/transparent"
+            android:textColorHint="@android:color/transparent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btnAddTodo"
             app:layout_constraintStart_toStartOf="parent" />
